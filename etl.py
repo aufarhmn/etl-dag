@@ -5,8 +5,6 @@ from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 
-# FIXME: TIME ZONE AND START AND END DATE STILL INCORRECT 
-
 default_args = {
     'owner': 'airflow',
     'start_date': datetime(2023, 11, 27), 
@@ -18,7 +16,7 @@ dag = DAG(
     'etl-rekdat',
     default_args=default_args,
     description='ETL for stock historical data',
-    schedule_interval='18 16 * * *',
+    schedule_interval='30 06 * * *',
 )
 
 def run_script():
